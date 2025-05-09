@@ -35,20 +35,26 @@ getData();
           <RouterLink :to="`/pokemons/${poke.name}`">{{ poke.name }}</RouterLink>
         </li>
       </ul>
-    </div>
+
+ </div>
+
 
     <!-- Botones -->
-    <div class="buttons">
+  <div class="buton">
+    <div class="buttons" >
       <div class="btn a">A</div>
     </div>
-    <div class="buttons-b">
+    <div class="buttons">
       <div class="btn b">B</div>
+      
       <div class="btn x">X</div>
       </div>
     <div class="buttons">
       <div class="btn y">Y</div>
     </div>
     </div>
+  </div>
+
   
 
 
@@ -58,7 +64,7 @@ getData();
 
 <style scoped>
 .nintendo-3ds {
-  max-width: 400px;
+  max-width: 600px;
   margin: 20px auto;
   padding: 10px;
   background: #1a1a1a;
@@ -81,7 +87,7 @@ getData();
 }
 
 .bottom-screen {
-  background: #444;
+  background: #ffffff;
   height: 200px;
   overflow-y: auto;
 }
@@ -92,11 +98,11 @@ ul {
 }
 
 li {
-  margin: 5px 0;
+  margin: 15px 0;
 }
 
 a {
-  color: #4dd0e1;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -109,12 +115,7 @@ a:hover {
   justify-content: space-around;
   margin-top: 15px;
 }
-.buttons-b {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
 
-}
 
 .btn {
   width: 40px;
