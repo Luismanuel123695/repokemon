@@ -1,31 +1,24 @@
 <script setup>
-import { ref } from 'vue';
 import {RouterLink} from 'vue-router';
 import {useGetData} from '@/composables/GetData';
 
 
-const pokemons = ref([]);
 
-const {data, getData, loading} = useGetData();
 
-// const getData = async () => {
-//     try {
-//         const {data} = await axios.get('https://pokeapi.co/api/v2/pokemon');
-//         pokemons.value = data.results
-//     }catch (error) {
-//         console.error(error);
-//     }
-// };
+const {data, getData, loading, error} = useGetData();
+
+
 getData('https://pokeapi.co/api/v2/pokemon');
 </script>
 
 
 
 <template>
-  <p v-if="loading">loading</p>
+ 
+  <div class="alert alert-danger" v-if="error">{{ error }}</div>
   <div v-else="data" class="nintendo-3ds">
 
-    <div class="screentop-screen">
+    <div class="screen top-screen">
       <h1>Pokemons</h1>
       <p>List of Pokemons</p>
     </div>
@@ -79,7 +72,7 @@ getData('https://pokeapi.co/api/v2/pokemon');
 }
 
 .screen {
-  background: #333;
+  background: #000000;
   border-radius: 12px;
   margin: 25px 30px;
   padding: 15px;
@@ -87,7 +80,7 @@ getData('https://pokeapi.co/api/v2/pokemon');
 }
 
 .top-screen {
-  background: #111;
+  background: #000000;
 }
 
 .bottom-screen {

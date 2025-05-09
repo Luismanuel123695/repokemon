@@ -1,10 +1,12 @@
 <script setup>
-import axios from 'axios';
 import {useRoute ,useRouter} from 'vue-router';
-import {ref} from 'vue';
-const pokem = ref([]);
+import {useGetData} from '@/composables/GetData';
+
+
 const route = useRoute();
 const router = useRouter();
+
+const {getData,data,loading,} = useGetData()
 
 
 
@@ -13,18 +15,7 @@ const back = () => {
 }
 
 
-const getData = async () => {
-    try {
-        const {data} = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
-        );
-        console.log(data);
-        pokem.value = data;
-    }catch (error) {
-        console.error(error);
-    }
-};
-getData();
+getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
 
 </script>
 
@@ -32,16 +23,11 @@ getData();
 
 
 <template>
-    
-  
-    
-    
-
-
-    <div class="nintendo-3ds">
+    <p v-if="loading">Loading...</p>
+      <div v-else="data" class="nintendo-3ds">
 
         <div class="screen top-screen">
-        <img :src="pokem.sprites?.front_default" alt="">
+        <img :src="data.sprites?.front_default" alt="">
         </div>
 
 
