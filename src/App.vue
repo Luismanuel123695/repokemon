@@ -4,16 +4,34 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+
+    <RouterLink class="navbar-brand" to="/">
+      <img 
+      src="@/assets/logo.png" 
+      alt="Logo" 
+      width="30" 
+      height="24" 
+      class="d-inline-block align-text-top">
+      
+    </RouterLink>Pokeapi
+  </div>
+  <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/Pokemons">pokemons</RouterLink>
+
+      </nav>
+</nav>
+
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+     
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+
     </div>
   </header>
 
