@@ -18,18 +18,114 @@ getData();
 
 
 
-
 <template>
-    <h1>Pokemons</h1>
-    <p>List of Pokemons</p>
-    <ul>
-        <li v-for="poke in pokemons" >
-            <RouterLink :to="`/pokemons/${poke.name}`">{{ poke.name }}</RouterLink>
-      
-  
-        </li>
+  <div class="nintendo-3ds">
 
-    </ul>
-    
+    <div class="screen top-screen">
+      <h1>Pokemons</h1>
+      <p>List of Pokemons</p>
+    </div>
+
+
+
+    <!-- Pantalla inferior -->
+    <div class="screen bottom-screen">
+      <ul>
+        <li v-for="poke in pokemons" :key="poke.name">
+          <RouterLink :to="`/pokemons/${poke.name}`">{{ poke.name }}</RouterLink>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Botones -->
+    <div class="buttons">
+      <div class="btn a">A</div>
+    </div>
+    <div class="buttons-b">
+      <div class="btn b">B</div>
+      <div class="btn x">X</div>
+      </div>
+    <div class="buttons">
+      <div class="btn y">Y</div>
+    </div>
+    </div>
+  
+
 
 </template>
+
+  
+
+<style scoped>
+.nintendo-3ds {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  background: #1a1a1a;
+  border: 8px solid black;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.screen {
+  background: #333;
+  border-radius: 12px;
+  margin: 25px 30px;
+  padding: 15px;
+  color: white;
+}
+
+.top-screen {
+  background: #111;
+}
+
+.bottom-screen {
+  background: #444;
+  height: 200px;
+  overflow-y: auto;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a {
+  color: #4dd0e1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.buttons-b {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 0 5px #000;
+}
+</style>

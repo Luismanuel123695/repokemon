@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
@@ -25,28 +25,17 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
 </nav>
 
-  <header>
-     
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-
-    </div>
-  </header>
 
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 20%;
 }
 
 nav {
@@ -60,9 +49,7 @@ nav a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
+
 
 nav a {
   display: inline-block;
@@ -71,7 +58,8 @@ nav a {
 }
 
 nav a:first-of-type {
-  border: 0;
+  border: 25;
+
 }
 
 @media (min-width: 1024px) {
@@ -83,6 +71,9 @@ nav a:first-of-type {
 
   .logo {
     margin: 0 2rem 0 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
 
   header .wrapper {
@@ -90,14 +81,5 @@ nav a:first-of-type {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
-}
 </style>
