@@ -27,8 +27,8 @@ getData('https://pokeapi.co/api/v2/pokemon');
 
     <!-- Pantalla inferior -->
     <div class="screen bottom-screen">
-      <ul>
-        <li v-for="poke in data.results" :key="poke.name">
+      <ul class="list-group">
+        <li class="list-group-item" v-for="poke in data.results" :key="poke.name">
           <RouterLink :to="`/pokemons/${poke.name}`">{{ poke.name }}</RouterLink>
         </li>
       </ul>
@@ -39,15 +39,29 @@ getData('https://pokeapi.co/api/v2/pokemon');
     <!-- Botones -->
   <div class="buton">
     <div class="buttons" >
-      <div class="btn a">A</div>
+      <button class="btn a">A</button>
     </div>
     <div class="buttons">
-      <div class="btn b">B</div>
+
+      <button 
+      class="btn b" 
+      :disabled="!data.previous"
+      @click="getData(data.previous)">B
+    </button> 
+
+      <button
+      class="btn x"
+      :disabled="!data.next"
+      @click="getData(data.next)">X
       
-      <div class="btn x">X</div>
-      </div>
+  </button>
+    </div>
+
+
     <div class="buttons">
-      <div class="btn y">Y</div>
+      <button class="btn y">Y
+
+      </button>
     </div>
     </div>
   </div>

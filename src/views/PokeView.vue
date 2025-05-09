@@ -50,7 +50,7 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
       <div class="btn a">A</div>
     </div>
     <div class="buttons" >
-      <div><button @click="back" class="btn b">B</button>
+      <div @click="back" class="btn b">B
       </div>
       <div class="btn x">X</div>
       </div>
