@@ -8,7 +8,7 @@ const route = useRoute();
 const router = useRouter();
 const useFavoritos = useFavoritosStore();
 
-const {add}= useFavoritos
+const {add, findpoke}= useFavoritos
 
 const {getData,data,loading,} = useGetData()
 
@@ -62,7 +62,7 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
       <div class="btn y">Y</div>
     </div>
     <div class="butons">
-      <button class="btn" @click="add(data)">Favoritos</button>
+      <button :disabled="findpoke(data.name)" class="btn" @click="add(data)">Favoritos</button>
       </div>
     </div>
     </div>

@@ -27,6 +27,7 @@ getData('https://pokeapi.co/api/v2/pokemon');
 
     <!-- Pantalla inferior -->
     <div class="screen bottom-screen">
+      
       <ul class="list-group">
         <li class="list-group-item" v-for="poke in data.results" :key="poke.name">
           <RouterLink :to="`/pokemons/${poke.name}`">{{ poke.name }}</RouterLink>
