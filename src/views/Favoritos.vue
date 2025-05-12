@@ -1,6 +1,7 @@
 <script setup>
 import { useFavoritosStore } from '@/store/favoritos';
 import { storeToRefs } from 'pinia';
+import {RouterLink} from 'vue-router';
 
 const useFavoritos = useFavoritosStore();
 const {favoritos} = storeToRefs(useFavoritos);
@@ -19,6 +20,12 @@ const {remove} = useFavoritos;
             <div>
             <button class="btn btn-sm btn-danger" @click="remove(poke.id)">eliminar</button>
             </div>
+                 <div>
+   
+                <RouterLink class="btn btn-sm btn-primary mb-2" :to="`/pokemons/${poke.name}`">mas informacion</RouterLink>
+        
+            </div>
+
 
             <div>
             {{poke.name}}
