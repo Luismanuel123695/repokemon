@@ -13,8 +13,8 @@ const {favoritos} = storeToRefs(useFavoritos);
     <ul class="list-group">
         <li class="list-group-item active"
             v-for="poke in favoritos" :key="poke.id">
-            {{pokw.name}}
-        >
+            {{poke.name}}
+        
 
 
         </li>
