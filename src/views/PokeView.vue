@@ -1,10 +1,14 @@
 <script setup>
 import {useRoute ,useRouter} from 'vue-router';
 import {useGetData} from '@/composables/GetData';
+import { useFavoritosStore } from '@/store/favoritos';
 
 
 const route = useRoute();
 const router = useRouter();
+const useFavoritos = useFavoritosStore();
+
+const {add, findpoke}= useFavoritos
 
 const {getData,data,loading,} = useGetData()
 
@@ -57,6 +61,9 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
     <div class="buttons">
       <div class="btn y">Y</div>
     </div>
+    <div class="butons">
+      <button :disabled="findpoke(data.name)" class="btn" @click="add(data)">Favoritos</button>
+      </div>
     </div>
     </div>
 
@@ -116,6 +123,13 @@ a:hover {
   margin-top: 15px;
 }
 
+.butons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+
 
 .btn {
   width: 40px;
@@ -128,6 +142,11 @@ a:hover {
   justify-content: center;
   font-weight: bold;
   box-shadow: 0 0 5px #000;
+}
+.bottom-screen {
+  background: #ffffff;
+  height: 200px;
+  overflow-y: auto;
 }
 </style>
 
